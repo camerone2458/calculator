@@ -1,0 +1,30 @@
+body, a, p, h1, ul, li, button {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+body {
+  height: 100vh;
+  flex-direction: column;
+  flex: 1;
+  overflow-x: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.seperated {
+  justify-content: space-between;
+}
+
+.main {
+  flex: 1;
+}
