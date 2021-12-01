@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Calculator</title>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="flex">
@@ -20,38 +20,49 @@
   <div class="main flex">
     <h1>Calculator</h1>
     <div id="calculator" class="grid">
-      <div id="screen">
-        <div id="buttons">
-          <div id="clearNumbers">
-            <button id="clear">Clear</button>
-            <button id="backspace">Delete</button>
+      <div id="screen" class="grid">
+        <div id="screenTxt"></div>
+      </div>
+      <div id="buttons" class="grid grid-column">
+        <div id="leftBtns" class="grid small-gap">
+          <div id="clearNumbers" class="grid grid-column small-gap">
+            <button id="clear" class="topBtns">Clear</button>
+            <button id="backspace" class="topBtns">Delete</button>
           </div>
-          <div id="operators">
-            <button id="add">+</button>
-            <button id="subtract">-</button>
-            <button id="multiply">*</button>
-            <button id="divide">/</button>
-            <button id="equals">=</button>
+          <div id='numbers' class="grid">
+            <div class="grid grid-column small-gap">
+              <button id="7" class="nmbrBtns">7</button>
+              <button id="8" class="nmbrBtns">8</button>
+              <button id="9" class="nmbrBtns">9</button>
+            </div>
+            <div class="grid grid-column small-gap">
+              <button id="4" class="nmbrBtns">4</button>
+              <button id="5" class="nmbrBtns">5</button>
+              <button id="6" class="nmbrBtns">6</button>
+            </div>
+            <div class="grid grid-column small-gap">
+              <button id="1" class="nmbrBtns">1</button>
+              <button id="2" class="nmbrBtns">2</button>
+              <button id="3" class="nmbrBtns">3</button>
+            </div>
+            <div class="grid grid-column small-gap">
+              <button id="0" class="nmbrBtns longBtn">0</button>
+              <button id="decimal" class="nmbrBtns">.</button>
+            </div>
           </div>
-          <div id='numbers'>
-            <button id="0">0</button>
-            <button id="1">1</button>
-            <button id="2">2</button>
-            <button id="3">3</button>
-            <button id="4">4</button>
-            <button id="5">5</button>
-            <button id="6">6</button>
-            <button id="7">7</button>
-            <button id="8">8</button>
-            <button id="9">9</button>
-          </div>
-
+        </div>
+        <div id="operators" class="grid">
+          <button id="equals" class="oprtrBtns">=</button>
+          <button id="add" class="oprtrBtns">+</button>
+          <button id="subtract" class="oprtrBtns">-</button>
+          <button id="multiply" class="oprtrBtns">*</button>
+          <button id="divide" class="oprtrBtns">/</button>
         </div>
       </div>
     </div>
   </div>
   <footer class="flex">
-
+    <p>Made by Cameron Edwards</p>
   </footer>
 </body>
 </html>

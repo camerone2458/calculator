@@ -13,18 +13,89 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  font-size: 30px;
+}
+
+.topBtns {
+  height: 65px;
+  width: 125px;
+}
+
+.oprtrBtns {
+  height: 65px;
+  width: 65px;
+}
+
+.nmbrBtns {
+  height: 65px;
+  width: 80px;
+}
+
+#buttons,
+#numbers,
+#operators,
+#clearNumbers {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .flex {
   display: flex;
+}
+
+.longBtn {
+  width: 170px;
 }
 
 .grid {
   display: grid;
 }
 
+.grid-column {
+  grid-auto-flow: column;
+}
+
 .seperated {
   justify-content: space-between;
 }
 
+.small-gap {
+  gap: 10px;
+}
+
+.med-gap {
+  gap: 20px;
+}
+
+footer {
+  justify-content: center;
+}
+
 .main {
   flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+#calculator {
+  width: 375px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+#screen {
+  width: 354px;
+  height: 75px;
+  border: 1px solid black;
+  margin: 10px;
+  font-size: 35px;
+  align-items: center;
+  justify-content: right;
+}
+
+#screenTxt {
+  margin: 15px;
 }
