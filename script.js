@@ -24,7 +24,11 @@ function operate(operator, num1, num2) {
   } else if(operator == 'multiply') {
     return multiply(num1, num2);
   } else if(operator == 'divide') {
-    return divide(num1, num2);
+    if (secondNumber == 0) {
+      return 'Not Possible';
+    } else {
+      return divide(num1, num2);
+    }
   }//End of if(operator)
 }; //End of operation function
 
@@ -50,7 +54,7 @@ let secondOperatorFunction = '';
 for (let btn of numberButtons) {
   btn.addEventListener('click', function() {
     nextNumber = btn.id;
-    if(currentNumber.length < 14) {
+    if(currentNumber.length < 21) {
       if(btn.id === 'decimal' && !currentNumber.includes('.')) {
       currentNumber = currentNumber + '.';
     } else if(btn.id !== 'decimal') {
@@ -65,26 +69,42 @@ for (let btn of operatorButtons) {
   btn.addEventListener('click', function() {
     firstOperatorFunction = secondOperatorFunction;
     secondOperatorFunction = btn.id;
-    if (firstNumber === '') {
-      firstNumber = currentNumber;
-      currentNumber = ''
-    } else if (secondNumber === '') {
-      secondNumber = currentNumber;
-      currentNumber = '';
-      solution = operate(firstOperatorFunction, parseInt(firstNumber), parseInt(secondNumber));
-      firstNumber = solution;
-      secondNumber = ''
-      currentNumber = ''
-      solution = ''
-      calculatorDisplay.innerHTML = firstNumber;
+    if (firstOperatorFunction == 'equals' && secondNumber == '') {
+      firstOperatorFunction = '';
+    } else {
+      if (firstNumber === '') {
+        firstNumber = currentNumber;
+        currentNumber = ''
+      } else if (secondNumber === '') {
+        secondNumber = currentNumber;
+        currentNumber = '';
+      }
+      if (firstNumber !== '' && secondNumber !== '') {
+        solution = operate(firstOperatorFunction, 
+          parseFloat(firstNumber), parseFloat(secondNumber));
+        firstNumber = solution;
+        secondNumber = '';
+        calculatorDisplay.innerHTML = solution;
+      };
     }
-    console.log(firstNumber, secondNumber, solution);
   });
 };//End of operatorButtons
 
 for (let btn of clearButtons) {
   btn.addEventListener('click', function() {
     clearFunction = btn.id;
-    console.log(clearFunction);
+    if (clearFunction === 'clear') {
+      firstNumber = '';
+      secondNumber = '';
+      solution = '';
+      currentNumber = '';
+      firstOperatorFunction = '';
+      secondOperatorFunction = '';
+      calculatorDisplay.innerHTML = '';
+    };
+    if (clearFunction === 'backspace') {
+      currentNumber = currentNumber.slice(0, -1);
+      calculatorDisplay.innerHTML = currentNumber;
+    };
   });
 };//End of clearButtons

@@ -6,30 +6,61 @@ body, a, p, h1, ul, li, button {
   color: black;
 }
 
+footer ul {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
 body {
   height: 100vh;
   flex-direction: column;
   flex: 1;
   overflow-x: hidden;
+  background-color: #edf6f9;
 }
 
 button {
   font-size: 30px;
+  border-radius: 5px;
+  border: 1px solid #919191;
+  box-shadow: 2px 1px 2px #4e4e4e;
+}
+
+header {
+  align-items: center;
+}
+
+header p {
+  font-size: 25px;
+}
+
+footer p {
+  font-size: 18px;
+}
+
+header,
+footer {
+  background-color: #a8dadc;
+  padding: 15px;
 }
 
 .topBtns {
   height: 65px;
   width: 125px;
+  background-color: #a4deff;
 }
 
 .oprtrBtns {
   height: 65px;
   width: 65px;
+  background-color: #fff5c8;
 }
 
 .nmbrBtns {
   height: 65px;
   width: 80px;
+  background-color: #ffe7f9;
 }
 
 #buttons,
@@ -71,6 +102,9 @@ button {
 
 footer {
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .main {
@@ -78,24 +112,30 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 25px;
+  margin-top: 25px;
 }
 
 #calculator {
   width: 375px;
   height: 500px;
   border: 1px solid black;
+  border-radius: 15px;
+  background-color: #dbdbdb;
+  box-shadow: 3px 2px 4px #4e4e4e;
 }
 
 #screen {
-  width: 354px;
+  width: 360px;
   height: 75px;
   border: 1px solid black;
-  margin: 10px;
-  font-size: 35px;
+  margin: 6.5px;
+  font-size: 25px;
   align-items: center;
   justify-content: right;
+  border-radius: 8px;
+  background-color: #fafafa;
 }
 
 #screenTxt {
-  margin: 15px;
+  margin: 10px;
 }
